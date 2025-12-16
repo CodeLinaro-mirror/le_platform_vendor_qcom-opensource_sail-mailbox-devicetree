@@ -1,0 +1,17 @@
+/*
+* Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+*  SPDX-License-Identifier: BSD-3-Clause
+*/
+ 
+ /dts-v1/;
+ /plugin/;
+
+#include "qcs9100-sail.dtsi"
+/ {
+       model = "Qualcomm QCS9100 Ride";
+       compatible = "qcom,qcs9100-ride", "qcom,qcs9100", "qcom,sa8775p";
+       qcom,msm-id = <667 0x10000>, <667 0x20000>;
+       qcom,board-id = <0x10019 0>, <0x10025 1>;
+};
+
+

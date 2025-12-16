@@ -1,0 +1,16 @@
+/*
+* Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+*  SPDX-License-Identifier: BSD-3-Clause
+*/
+ 
+/dts-v1/;
+ /plugin/;
+
+#include "qcs9075-rb8-evk-sail.dtsi"
+/ {
+	model = "Qualcomm Technologies, Inc. Addons IQ 9075 EVK";
+        compatible = "qcom,qcs9075-addons-iq-9075-evk", "qcom,qcs9075", "qcom,sa8775p";
+
+};
+
+
