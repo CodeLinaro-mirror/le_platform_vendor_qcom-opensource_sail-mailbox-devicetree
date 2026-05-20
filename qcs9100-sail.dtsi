@@ -30,35 +30,47 @@
                #mbox-cells = <2>;
                num_mbox_chans = <5>;
        };
-	#if 1
-              sail_mailbox: sail-mailbox@90d80000 {
-                     compatible = "qcom,sail-mailbox";
-                     reg = <0x0 0x01FFE02C 0x0 0x10>,
-                        <0x0 0x01FFD018 0x0 0x10>,
-                         <0x0 0x17C0000C 0x0 0x04>;
-              mboxes = <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x2>,
-                        <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x3>,
-                       <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x4>,
-                        <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x5>,
-                        <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x6>,
-                        <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0X7>,
-			<&ipcc_computeL1 IPCC_CLIENT_SAIL2 0X8>,
-                        <&ipcc_computeL1 IPCC_CLIENT_SAIL1 0X9>;
-               memory-region = <&sail_mailbox_mem>,
-                               <&sail_ota_mem>;
-               interrupt-parent = <&ipcc_computeL1>;
-              interrupts = <IPCC_CLIENT_SAIL0 0x2 IRQ_TYPE_EDGE_RISING>,
-                            <IPCC_CLIENT_SAIL0 0x3 IRQ_TYPE_EDGE_RISING>,
-                            <IPCC_CLIENT_SAIL0 0x4 IRQ_TYPE_EDGE_RISING>,
-                            <IPCC_CLIENT_SAIL0 0x5 IRQ_TYPE_EDGE_RISING>,
-                            <IPCC_CLIENT_SAIL0 0x6 IRQ_TYPE_EDGE_RISING>,
-                            <IPCC_CLIENT_SAIL0 0X7 IRQ_TYPE_EDGE_RISING>,
-			    <IPCC_CLIENT_SAIL2 0X8 IRQ_TYPE_EDGE_RISING>,
-                            <IPCC_CLIENT_SAIL1 0X9 IRQ_TYPE_EDGE_RISING>;
+        sail_mailbox: sail-mailbox@90d80000 {
+                compatible = "qcom,sail-mailbox";
+                reg = <0x0 0x01FFE02C 0x0 0x10>,
+                <0x0 0x01FFD018 0x0 0x10>,
+                        <0x0 0x17C0000C 0x0 0x04>;
+        mboxes = <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x2>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL1 0x3>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x4>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x5>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0x6>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0X7>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL2 0X8>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL1 0X9>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL2 0Xa>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL1 0Xb>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0Xc>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL0 0Xd>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL1 0Xe>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL2 0Xf>,
+                <&ipcc_computeL1 IPCC_CLIENT_SAIL3 0X10>;
+        memory-region = <&sail_mailbox_mem>,
+                        <&sail_ota_mem>;
+        interrupt-parent = <&ipcc_computeL1>;
+        interrupts = <IPCC_CLIENT_SAIL0 0x2 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL1 0x3 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL0 0x4 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL0 0x5 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL0 0x6 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL0 0X7 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL2 0X8 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL1 0X9 IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL2 0Xa IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL1 0Xb IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL0 0Xc IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL0 0Xd IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL1 0Xe IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL2 0Xf IRQ_TYPE_EDGE_RISING>,
+                        <IPCC_CLIENT_SAIL3 0x10 IRQ_TYPE_EDGE_RISING>;
 
-               sail-handshake-delay = <50000>;
-             status = "okay";
-             };
-	#endif
+        sail-handshake-delay = <50000>;
+        status = "okay";
+        };
 };
 
